@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "Credencial FdW",
+	"version": "1.0",
+	"description": "Ejemplo de extensión de Google Chrome que muestra tus datos en Foros del Web.",
+	"icons": {
+		 "16": "images/icon16.png",
+		 "48": "images/icon48.png",
+		 "128": "images/icon128.png"
+	},
+	"page_action": {
+		"default_title": "Credencial FdW",
+		"default_icon": "images/icon.png",
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"https://vender.mercadolibre.com.ar/*"
+	],
+	"content_scripts": [
+		{
+		  "matches": ["https://vender.mercadolibre.com.ar/*"],
+		  "css": ["mystyles.css"],
+		  "js": ["jquery-1.11.3.js", "underscore-min.js", "myscript.js"],
+		  "run_at": "document_end"
+		}
+	]
+}
